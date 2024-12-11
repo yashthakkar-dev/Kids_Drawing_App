@@ -195,7 +195,10 @@ class MainActivity : AppCompatActivity() {
                 Manifest.permission.READ_EXTERNAL_STORAGE
             )
         ) {
-            showRationalDialog(R.string.app_name.toString(), R.string.internal_storage_request_message.toString())
+            showRationalDialog(
+                R.string.app_name.toString(),
+                R.string.internal_storage_request_message.toString()
+            )
         } else {
             requestPermission.launch(
                 arrayOf(
@@ -247,6 +250,7 @@ class MainActivity : AppCompatActivity() {
 
         if (colorTag == "random") {
             openColorPickerDialogue(view)
+            mImageButtonCurrentPaint = view
             drawingView?.isEraserOn = false
             return
         }
@@ -280,7 +284,7 @@ class MainActivity : AppCompatActivity() {
     private fun openColorPickerDialogue(view: ImageButton) {
         val colorPickerDialogue = AmbilWarnaDialog(
             this,
-            drawingView?.solidColor ?: Color.BLACK, // Fallback to black if solidColor is null
+            drawingView?.color ?: Color.BLACK, // Fallback to black if solidColor is null
             object : AmbilWarnaDialog.OnAmbilWarnaListener {
                 override fun onCancel(dialog: AmbilWarnaDialog?) {
                 }

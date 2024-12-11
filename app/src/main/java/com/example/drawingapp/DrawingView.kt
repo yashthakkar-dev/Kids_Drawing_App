@@ -21,7 +21,7 @@ class DrawingView(context: Context, attrs: AttributeSet) : View(context, attrs) 
     private var mDrawPaint: Paint? = null
     private var mCanvasPaint: Paint? = null
     private var mBrushSize: Float = 0f
-    private var color = Color.BLACK
+    var color = Color.BLACK
     private var canvas: Canvas? = null
     private val mPaths = ArrayList<CustomPath>()
     private val mUndoPaths = ArrayList<CustomPath>()
@@ -88,8 +88,6 @@ class DrawingView(context: Context, attrs: AttributeSet) : View(context, attrs) 
     }
 
 
-
-
     @SuppressLint("ClickableViewAccessibility")
     override fun onTouchEvent(event: MotionEvent?): Boolean {
         val touchX = event?.x
@@ -108,6 +106,7 @@ class DrawingView(context: Context, attrs: AttributeSet) : View(context, attrs) 
                     }
                 }
             }
+
             MotionEvent.ACTION_MOVE -> {
                 if (isEraserOn) {
                     canvas?.drawCircle(touchX!!, touchY!!, mBrushSize / 2, mDrawPaint!!)
@@ -115,12 +114,14 @@ class DrawingView(context: Context, attrs: AttributeSet) : View(context, attrs) 
                     mDrawPath!!.lineTo(touchX!!, touchY!!)
                 }
             }
+
             MotionEvent.ACTION_UP -> {
                 if (!isEraserOn) {
                     mPaths.add(mDrawPath!!)
                     mDrawPath = CustomPath(color, mBrushSize)
                 }
             }
+
             else -> return false
         }
         invalidate()
@@ -128,13 +129,16 @@ class DrawingView(context: Context, attrs: AttributeSet) : View(context, attrs) 
     }
 
 
-
-    fun setSizeForBrush(newSize: Float){
-        mBrushSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, newSize, resources.displayMetrics)
+    fun setSizeForBrush(newSize: Float) {
+        mBrushSize = TypedValue.applyDimension(
+            TypedValue.COMPLEX_UNIT_DIP,
+            newSize,
+            resources.displayMetrics
+        )
         mDrawPaint?.strokeWidth = mBrushSize
     }
 
-    fun setColor(newColor: String){
+    fun setColor(newColor: String) {
         color = Color.parseColor(newColor)
         mDrawPaint?.color = color
     }
