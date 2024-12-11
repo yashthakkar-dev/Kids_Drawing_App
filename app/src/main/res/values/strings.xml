@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Drawing App</string>
+    <string name="internal_storage_request_message">Drawing App needs to access your external storage</string>
+    <string name="please_wait">Please wait...</string>
+    <string name="small">small</string>
+    <string name="medium">medium</string>
+    <string name="large">large</string>
+    <string name="color_pallet">Color Pallet</string>
+    <string name="gallery_button">Gallery Button</string>
+    <string name="undo_button">Undo Button</string>
+    <string name="redo_button">Redo Button</string>
+    <string name="change_brush_size">Change Brush Size</string>
+    <string name="save_button">Save Button</string>
+    <string name="background_image">Background Image</string>
 </resources>

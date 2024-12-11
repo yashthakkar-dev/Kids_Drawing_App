@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <ImageButton
-        android:contentDescription="small"
+        android:contentDescription="@string/small"
         android:id="@+id/ib_small_brush"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -20,7 +20,7 @@
         android:id="@+id/ib_medium_brush"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:contentDescription="medium"
+        android:contentDescription="@string/medium"
         android:src="@drawable/medium"
         app:layout_constraintTop_toBottomOf="@id/ib_small_brush"
         app:layout_constraintEnd_toEndOf="parent"
@@ -29,7 +29,7 @@
         />
 
     <ImageButton
-        android:contentDescription="large"
+        android:contentDescription="@string/large"
         android:id="@+id/ib_large_brush"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

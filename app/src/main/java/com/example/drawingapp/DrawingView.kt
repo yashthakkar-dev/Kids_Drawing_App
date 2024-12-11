@@ -1,5 +1,6 @@
 package com.example.drawingapp
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.Canvas
@@ -25,7 +26,7 @@ class DrawingView(context: Context, attrs: AttributeSet) : View(context, attrs) 
     private val mPaths = ArrayList<CustomPath>()
     private val mUndoPaths = ArrayList<CustomPath>()
 
-    private val clearXfermode = PorterDuffXfermode(PorterDuff.Mode.CLEAR)
+    private val clearXFerMode = PorterDuffXfermode(PorterDuff.Mode.CLEAR)
 
 
     var isEraserOn = false
@@ -89,13 +90,14 @@ class DrawingView(context: Context, attrs: AttributeSet) : View(context, attrs) 
 
 
 
+    @SuppressLint("ClickableViewAccessibility")
     override fun onTouchEvent(event: MotionEvent?): Boolean {
         val touchX = event?.x
         val touchY = event?.y
         when (event?.action) {
             MotionEvent.ACTION_DOWN -> {
                 if (isEraserOn) {
-                    mDrawPaint?.xfermode = clearXfermode
+                    mDrawPaint?.xfermode = clearXFerMode
                 } else {
                     mDrawPaint?.xfermode = null
                     mDrawPath!!.color = color

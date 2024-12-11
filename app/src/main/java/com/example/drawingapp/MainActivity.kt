@@ -42,9 +42,9 @@ class MainActivity : AppCompatActivity() {
 
     private var mImageButtonCurrentPaint: ImageButton? = null
 
-    lateinit var customProgressDialog: Dialog
+    private lateinit var customProgressDialog: Dialog
 
-    val openGalleryLauncher: ActivityResultLauncher<Intent> =
+    private val openGalleryLauncher: ActivityResultLauncher<Intent> =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
             if (result.resultCode == RESULT_OK && result.data != null) {
                 val imageBackground: ImageView = findViewById(R.id.image_background)
@@ -52,7 +52,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-    val requestPermission: ActivityResultLauncher<Array<String>> =
+    private val requestPermission: ActivityResultLauncher<Array<String>> =
         registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) { permissions ->
 
             permissions.entries.forEach {
@@ -195,7 +195,7 @@ class MainActivity : AppCompatActivity() {
                 Manifest.permission.READ_EXTERNAL_STORAGE
             )
         ) {
-            showRationalDialog("Drawing App", "Drawing App needs to access your external storage")
+            showRationalDialog(R.string.app_name.toString(), R.string.internal_storage_request_message.toString())
         } else {
             requestPermission.launch(
                 arrayOf(
@@ -316,7 +316,7 @@ class MainActivity : AppCompatActivity() {
             this,
             arrayOf(result),
             null
-        ) { path, uri ->
+        ) { _, uri ->
             val shareIntent = Intent()
             shareIntent.action = Intent.ACTION_SEND
             shareIntent.putExtra(Intent.EXTRA_STREAM, uri)

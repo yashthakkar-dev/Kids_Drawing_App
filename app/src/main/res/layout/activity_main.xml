@@ -20,6 +20,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
+            android:contentDescription="@string/background_image"
             android:id="@+id/image_background"
             android:scaleType="centerCrop"
             tools:src="@drawable/image"
@@ -48,6 +49,7 @@
         android:layout_height="wrap_content">
 
         <ImageButton
+            android:contentDescription="@string/color_pallet"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:src="@drawable/pallet_normal"
@@ -62,6 +64,7 @@
             android:layout_weight="1" />
 
         <ImageButton
+            android:contentDescription="@string/color_pallet"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:src="@drawable/pallet_normal"
@@ -76,6 +79,7 @@
             android:layout_weight="1" />
 
         <ImageButton
+            android:contentDescription="@string/color_pallet"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:onClick="paintClicked"
@@ -90,6 +94,7 @@
             android:layout_weight="1" />
 
         <ImageButton
+            android:contentDescription="@string/color_pallet"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:onClick="paintClicked"
@@ -104,6 +109,7 @@
             android:layout_weight="1" />
 
         <ImageButton
+            android:contentDescription="@string/color_pallet"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:onClick="paintClicked"
@@ -118,6 +124,7 @@
             android:layout_weight="1" />
 
         <ImageButton
+            android:contentDescription="@string/color_pallet"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:onClick="paintClicked"
@@ -132,6 +139,7 @@
             android:layout_weight="1" />
 
         <ImageButton
+            android:contentDescription="@string/color_pallet"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:onClick="paintClicked"
@@ -146,6 +154,7 @@
             android:layout_weight="1" />
 
         <ImageButton
+            android:contentDescription="@string/color_pallet"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:onClick="paintClicked"
@@ -159,6 +168,7 @@
             android:layout_weight="1" />
 
         <ImageButton
+            android:contentDescription="@string/color_pallet"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:onClick="paintClicked"
@@ -180,6 +190,7 @@
         android:layout_height="wrap_content">
 
         <ImageButton
+            android:contentDescription="@string/gallery_button"
             android:id="@+id/ib_gallery"
             android:layout_width="50dp"
             android:layout_height="50dp"
@@ -188,6 +199,7 @@
             />
 
         <ImageButton
+            android:contentDescription="@string/undo_button"
             android:id="@+id/ib_undo"
             android:layout_width="50dp"
             android:layout_height="50dp"
@@ -196,6 +208,7 @@
             />
 
         <ImageButton
+            android:contentDescription="@string/redo_button"
             android:id="@+id/ib_redo"
             android:layout_width="50dp"
             android:layout_height="50dp"
@@ -204,6 +217,7 @@
             />
 
         <ImageButton
+            android:contentDescription="@string/change_brush_size"
             android:id="@+id/ib_brush"
             android:layout_width="50dp"
             android:layout_height="50dp"
@@ -212,13 +226,13 @@
             />
 
         <ImageButton
+            android:contentDescription="@string/save_button"
             android:id="@+id/ib_save"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:src="@drawable/ic_save"
             android:scaleType="fitXY"
             />
-
 
     </LinearLayout>
 
